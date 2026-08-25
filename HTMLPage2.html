@@ -1,0 +1,216 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{subject}}</title>
+    <style>
+        /* Media query para clientes que lo respeten */
+        @media only screen and (max-width:520px) {
+            .stack {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .hero-padding {
+                padding: 18px !important;
+            }
+
+            .img {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .nav-badge {
+                display: inline-block !important;
+                margin-bottom: 8px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0; background-color:#111215; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; font-family: Arial, Helvetica, sans-serif; color:#e7dfc8;">
+
+    <!-- Preheader (vista previa en bandeja) -->
+    <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">{{preheader}}</div>
+
+    <!-- Outer wrapper (fondo oscuro) -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#111215; width:100%; min-width:320px;">
+        <tr>
+            <td align="center" style="padding:28px 16px;">
+
+                <!-- Main container -->
+                <table role="presentation" width="680" cellpadding="0" cellspacing="0" style="max-width:680px; width:100%; border-collapse:separate; border-radius:12px; overflow:hidden; background:linear-gradient(180deg,#141416,#0f1113); border:1px solid rgba(212,175,55,0.06);">
+                    <!-- Header: logo + view in browser -->
+                    <tr>
+                        <td style="padding:18px 20px; background:linear-gradient(180deg, rgba(0,0,0,0.06), transparent);">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="vertical-align:middle; text-align:left;">
+                                        <img src="logo.jpg" alt="logo" width="140" style="display:block; border:0; outline:none; text-decoration:none;" />
+                                    </td>
+                                    <td style="vertical-align:middle; text-align:right; font-size:13px; color:#9ea59a;">
+                                        <a href="{{view_in_browser_url}}" target="_blank" rel="noopener" style="color:#D4AF37; text-decoration:none;">Ver en navegador</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Hero -->
+                    <tr>
+                        <td style="padding:28px 30px;" class="hero-padding">
+                            <h1 style="margin:0 0 12px 0; color:#D4AF37; font-size:26px; line-height:1.05; font-weight:800;">Productividad personal</h1>
+                            <p style="margin:0 0 18px 0; color:#eae0c7; font-size:15px; line-height:1.5;">
+                                La productividad personal es la capacidad de organizar y aprovechar de manera eficiente el tiempo, los recursos y las habilidades para cumplir objetivos y realizar tareas de forma efectiva, buscando obtener buenos resultados sin desperdiciar esfuerzo.
+                            </p>
+                            
+                        </td>
+                    </tr>
+
+                    <!-- Decorative divider -->
+                    <tr>
+                        <td style="padding:0 20px;">
+                            <div style="height:1px; background:linear-gradient(90deg, rgba(212,175,55,0.06), rgba(255,255,255,0.02), rgba(212,175,55,0.06)); margin:0 0 14px 0;"></div>
+                        </td>
+                    </tr>
+
+                    <!-- Navigation badges -->
+                    <tr>
+                        <td style="padding:0 20px 18px 20px;">
+                            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                                <a href="#topic-b" style="background:linear-gradient(180deg,#E9D389,#D4AF37); color:#0b0b0b; padding:9px 12px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,0.35);">Herramientas</a>
+                                <a href="#topic-c" style="background:linear-gradient(180deg,#E9D389,#D4AF37); color:#0b0b0b; padding:9px 12px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,0.35);">Procesos</a>
+                                <a href="#topic-d" style="background:linear-gradient(180deg,#E9D389,#D4AF37); color:#0b0b0b; padding:9px 12px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,0.35);">Economía digital</a>
+                                <a href="#topic-e" style="background:linear-gradient(180deg,#E9D389,#D4AF37); color:#0b0b0b; padding:9px 12px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,0.35);">Características</a>
+                                <a href="#topic-f" style="background:linear-gradient(180deg,#E9D389,#D4AF37); color:#0b0b0b; padding:9px 12px; border-radius:8px; text-decoration:none; font-weight:700; font-size:13px; box-shadow:0 4px 14px rgba(0,0,0,0.35);">Pilares</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Content columns: left = text blocks, right = 4 image-only spaces -->
+                    <tr>
+                        <td style="padding:0 20px 20px 20px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <!-- left column: text cards -->
+                                    <td valign="top" style="width:58%; padding-right:14px;">
+                                        <!-- Card b -->
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#0f1112; border-radius:10px; border:1px solid rgba(212,175,55,0.06); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.6;">
+                                                    <div id="topic-b" style="font-size:16px; color:#D4AF37; font-weight:700; margin-bottom:6px;">Herramientas de productividad personal</div>
+                                                    Las herramientas de productividad personal son recursos que ayudan a organizar el tiempo, las tareas y las actividades de una persona. Entre ellas se encuentran los calendarios, agendas, listas de tareas, aplicaciones de notas y gestores de proyectos. Su objetivo es facilitar la organización, establecer prioridades y aprovechar mejor el tiempo.
+
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Card c -->
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#0f1112; border-radius:10px; border:1px solid rgba(212,175,55,0.06); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.6;">
+                                                    <div id="topic-c" style="font-size:16px; color:#D4AF37; font-weight:700; margin-bottom:6px;">Procesos de la productividad personal</div>
+                                                    Los procesos de productividad personal son las etapas que permiten realizar las actividades de manera organizada y eficiente. Comienzan con la definición de objetivos y la planificación de las tareas, continúan con la priorización y ejecución, y terminan con la revisión de los resultados. Este proceso permite identificar errores y mejorar continuamente la forma de trabajar.
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Card d -->
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#0f1112; border-radius:10px; border:1px solid rgba(212,175,55,0.06); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.6;">
+                                                    <div id="topic-d" style="font-size:16px; color:#D4AF37; font-weight:700; margin-bottom:6px;">Economía digital</div>
+                                                    La economía digital es el conjunto de actividades económicas que utilizan internet, tecnologías digitales y datos para producir, vender o intercambiar bienes y servicios. Incluye actividades como las compras por internet, los pagos digitales, las aplicaciones, el trabajo remoto y los servicios en línea, permitiendo que las empresas y consumidores estén conectados de forma rápida.
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Card e -->
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#0f1112; border-radius:10px; border:1px solid rgba(212,175,55,0.06); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.6;">
+                                                    <div id="topic-e" style="font-size:16px; color:#D4AF37; font-weight:700; margin-bottom:6px;">Características de la economía digital</div>
+                                                    La economía digital se caracteriza por la conectividad, rapidez, innovación y uso de datos. Permite que las empresas lleguen a clientes de diferentes lugares, realicen operaciones rápidamente y utilicen la información para tomar mejores decisiones. Además, facilita la automatización de procesos y la creación de nuevos productos y servicios.
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Card f -->
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#0f1112; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.6;">
+                                                    <div id="topic-f" style="font-size:16px; color:#D4AF37; font-weight:700; margin-bottom:6px;">Pilares de la economía digital</div>
+                                                    Los pilares de la economía digital son los elementos que permiten su funcionamiento y crecimiento. Entre los principales están la infraestructura tecnológica, la conectividad, los datos, las plataformas digitales, el talento humano, la innovación y la seguridad digital. Estos elementos permiten que las personas y empresas aprovechen las tecnologías para desarrollar nuevas actividades y modelos de negocio.
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- right column: four image-only spaces (no text/buttons inside these image containers) -->
+                                    <td valign="top" style="width:42%;">
+                                        <!-- Image slot 1 -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0c0d; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="productividad.jpg" alt="" width="100%" style="display:block; height:auto; max-width:100%; border:0; outline:none;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Image slot 2 -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0c0d; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="proceso.jpg" alt="" width="100%" style="display:block; height:auto; max-width:100%; border:0; outline:none;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Image slot 3 -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0c0d; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="eco.jpg" alt="" width="100%" style="display:block; height:auto; max-width:100%; border:0; outline:none;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Image slot 4 -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0c0d; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02);">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="cara.jpg" alt="" width="100%" style="display:block; height:auto; max-width:100%; border:0; outline:none;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        
+                                        <!-- Image slot 4 -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0c0d; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02);">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="pila.jpg" alt="" width="100%" style="display:block; height:auto; max-width:100%; border:0; outline:none;" />
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Final note / footer area -->
+                    <tr>
+                        <td style="padding:12px 20px 22px 20px; text-align:center; color:#9ea59a; font-size:12px;">
+                            {{visual_footer_note}}
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

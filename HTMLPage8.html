@@ -1,0 +1,248 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{subject}}</title>
+    <style>
+        /* Media query ligera para clientes que la respeten */
+        @media only screen and (max-width:520px) {
+            .stack {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .hero-pad {
+                padding: 18px !important;
+            }
+
+            .img {
+                width: 100% !important;
+                height: auto !important;
+                max-height: none !important;
+            }
+
+            .mobile-hide {
+                display: none !important;
+            }
+
+            .mobile-center {
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin:0; padding:0; background-color:#0f1112; font-family:Arial, Helvetica, sans-serif; color:#e7dfc8; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+
+    <!-- Preheader (oculto en el email pero aparece en la bandeja) -->
+    <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">{{preheader}}</div>
+
+    <!-- Outer wrapper (fondo oscuro) -->
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#111215; width:100%; min-width:320px;">
+        <tr>
+            <td align="center" style="padding:28px 12px;">
+
+                <!-- Main container -->
+                <table role="presentation" width="680" cellpadding="0" cellspacing="0" style="max-width:680px; width:100%; border-collapse:separate; border-radius:12px; overflow:hidden; background:linear-gradient(180deg,#141416,#0f1113); border:1px solid rgba(212,175,55,0.06);">
+                    <!-- Header: logo + view in browser -->
+                    <tr>
+                        <td style="padding:16px 20px; background:linear-gradient(180deg, rgba(0,0,0,0.04), transparent);">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="vertical-align:middle; text-align:left;">
+                                        <img src="logo.jpg" alt="logo" width="140" style="display:block; border:0; outline:none; text-decoration:none;" />
+                                    </td>
+                                    <td style="vertical-align:middle; text-align:right; color:#9ea59a; font-size:13px;">
+                                        <a href="{{view_in_browser_url}}" target="_blank" rel="noopener" style="color:#D4AF37; text-decoration:none;">Ver en navegador</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Hero -->
+                    <tr>
+                        <td style="padding:20px 26px;" class="hero-pad">
+                            <h1 style="margin:0 0 8px 0; color:#D4AF37; font-size:24px; line-height:1.05; font-weight:800;">Plan estratégico, Marca comercial y personal y Big Data</h1>
+                            <p style="margin:0 0 14px 0; color:#eae0c7; font-size:15px; line-height:1.5;">
+                                El plan estratégico permite definir objetivos y acciones para alcanzar metas; la marca personal y comercial ayuda a diferenciar y posicionar una persona, producto o empresa; y el Big Data permite analizar grandes cantidades de información para tomar mejores decisiones. En conjunto, ayudan a mejorar la organización, el reconocimiento y la competitividad.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Decorative divider -->
+                    <tr>
+                        <td style="padding:0 20px;">
+                            <div style="height:1px; background:linear-gradient(90deg, rgba(212,175,55,0.06), rgba(255,255,255,0.02), rgba(212,175,55,0.06)); margin:0 0 14px 0;"></div>
+                        </td>
+                    </tr>
+
+                    <!-- 7-week compact row (two rows) -->
+                    <tr>
+                        <td style="padding:0 20px 18px 20px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td width="33%" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:13px;">Semana 1</div>
+                                                    <a href="HTMLPage3.html">
+                                                        <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Productividad personal</div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="33%" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:13px;">Semana 2</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Plan estratégico, Marca comercial y personal y Big Data</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="33%" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:13px;">Semana 3</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Práctica y ejercicios</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="33%" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:13px;">Semana 4</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Revisión y ajustes</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="33%" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:13px;">Semana 5</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Proyectos aplicados</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="33%" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:13px;">Semana 6</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Optimización</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:13px;">Semana 7</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Cierre y próximos pasos</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Section: Semana 1 (compact, not too long) with two images stacked right -->
+                    <tr>
+                        <td style="padding:0 20px 22px 20px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <!-- Left: compact textual content -->
+                                    <td valign="top" style="width:58%; padding-right:14px;">
+                                        <div style="display:inline-block; padding:6px 10px; border-radius:18px; background:linear-gradient(90deg,#E9D389,#D4AF37); color:#0b0b0b; font-weight:700; font-size:12px; margin-bottom:10px;">Semana 2</div>
+
+                                        <h2 id="topic-b" style="margin:0 0 8px 0; color:#D4AF37; font-size:18px; line-height:1.1;">Plan estratégico, Marca comercial y personal y Big Data</h2>
+
+                                        <!-- Short paragraphs for compactness -->
+                                        <p style="margin:0 0 10px 0; color:#e7dfc8; font-size:14px; line-height:1.6;">
+                                            El plan estratégico es una herramienta que permite definir los objetivos de una empresa o proyecto y establecer las acciones necesarias para alcanzarlos. La marca personal y comercial consiste en construir una identidad y una imagen que permitan diferenciar a una persona, producto o empresa, transmitiendo sus valores, habilidades y características para generar reconocimiento y confianza.
+                                        </p>
+
+                                        <p style="margin:0 0 12px 0; color:#e7dfc8; font-size:14px; line-height:1.6;">
+                                            El Big Data se refiere al manejo y análisis de grandes cantidades de datos que se generan constantemente. Estos datos pueden utilizarse para identificar patrones, conocer mejor a los clientes, tomar decisiones más acertadas y mejorar productos o servicios. En conjunto, estos tres conceptos ayudan a las organizaciones a planificar mejor, diferenciarse de la competencia y tomar decisiones basadas en información.
+                                        </p>
+
+                                        <div style="margin-top:6px;">
+
+                                            <a href="#top" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:600; padding:8px 10px; border-radius:8px; border:1px solid rgba(212,175,55,0.06); display:inline-block;">Volver arriba</a>
+                                        </div>
+                                    </td>
+
+                                    <!-- Right: two images stacked, controlled height (no text inside the image containers) -->
+                                    <td valign="top" style="width:42%;">
+                                        <!-- Image slot A -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0c0d; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02); margin-bottom:12px;">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="marca.jpg" alt="marca" width="100%" style="display:block; height:auto; max-width:100%; border:0; outline:none;" class="img" />
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Image slot B -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0b0c0d; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.02);">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="big.jpg" alt="big" width="100%" style="display:block; height:auto; max-width:100%; border:0; outline:none;" class="img" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Short news / footer area -->
+                    <tr>
+                        <td style="padding:0 20px 20px 20px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid rgba(255,255,255,0.03); padding-top:12px;">
+                                <tr>
+                                    <td style="color:#e7dfc8; font-size:14px; line-height:1.5;">
+                                        <strong style="color:#D4AF37;">Noticias:</strong> {{news_snippet}} — <a href="{{news_url}}" style="color:#D4AF37; text-decoration:none;">Leer más</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding:12px 20px 18px 20px; text-align:center; color:#9ea59a; font-size:12px;">
+                            {{company}} — {{address}}<br />
+                            <span style="display:block; margin-top:6px;">Si no deseas recibir estos emails, <a href="{{unsubscribe_url}}" style="color:#D4AF37; text-decoration:none;">darte de baja</a>.</span>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Agendar cita - DriveX</title>
+    <style>
+        :root {
+            --bg: #0f1112;
+            --card: #141618;
+            --muted: #e7dfc8;
+            --gold: #D4AF37;
+            --gold-strong: #FFD87B;
+            --accent: #e9d389;
+            --muted-2: #9ea59a;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--muted);
+            font-family: Arial, Helvetica, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.5;
+            padding: 28px;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: linear-gradient(180deg,#141416,#0f1113);
+            border-radius: 12px;
+            padding: 18px;
+            border: 1px solid rgba(212,175,55,0.06);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        }
+
+        header {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(212,175,55,0.14), rgba(212,175,55,0.04));
+            box-shadow: 0 8px 22px rgba(0,0,0,0.5);
+        }
+
+            .logo svg {
+                width: 28px;
+                height: 28px;
+                fill: var(--gold)
+            }
+
+        h1 {
+            margin: 0;
+            color: var(--gold);
+            font-size: 20px
+        }
+
+        p.lead {
+            margin: 6px 0 0 0;
+            color: var(--muted-2)
+        }
+
+        /* Form layout */
+        form {
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 18px;
+            align-items: start;
+        }
+
+        @media (max-width:900px) {
+            form {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .left, .right {
+            display: flex;
+            flex-direction: column;
+            gap: 12px
+        }
+
+        label {
+            font-size: 13px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 6px
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea, input[type="date"], input[type="time"] {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.04);
+            background: #0b0c0d;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical
+        }
+
+        .row {
+            display: flex;
+            gap: 12px
+        }
+
+            .row .col {
+                flex: 1
+            }
+
+        .submit-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 6px
+        }
+
+        button.primary {
+            background: linear-gradient(180deg,var(--gold-strong),var(--gold));
+            color: #0b0b0b;
+            padding: 10px 14px;
+            border-radius: 10px;
+            border: none;
+            font-weight: 800;
+            cursor: pointer;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.5);
+        }
+
+        button.ghost {
+            background: transparent;
+            color: var(--gold);
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(212,175,55,0.08);
+            cursor: pointer;
+        }
+
+        .note {
+            font-size: 13px;
+            color: var(--muted-2);
+            margin-top: 6px
+        }
+
+        /* small card to show chosen appointment info */
+        .summary {
+            background: linear-gradient(180deg,#0e1112,#0b0c0d);
+            border-radius: 10px;
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.02);
+        }
+
+            .summary h4 {
+                margin: 0 0 8px 0;
+                color: var(--gold)
+            }
+
+            .summary p {
+                margin: 6px 0;
+                color: var(--muted)
+            }
+
+        /* modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999
+        }
+
+        .modal {
+            width: 92%;
+            max-width: 520px;
+            background: linear-gradient(180deg,#111315,#0b0c0d);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid rgba(212,175,55,0.06)
+        }
+
+            .modal h3 {
+                margin: 0 0 8px 0;
+                color: var(--gold)
+            }
+
+            .modal p {
+                margin: 6px 0;
+                color: var(--muted)
+            }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 12px
+        }
+
+        /* validation */
+        .error {
+            color: #ffb4b4;
+            font-size: 13px;
+            margin-top: 6px
+        }
+
+        footer {
+            margin-top: 16px;
+            color: var(--muted-2);
+            font-size: 13px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" /></svg>
+            </div>
+            <div>
+                <h1>Agendar cita - Mantenimiento</h1>
+                <p class="lead">Elige el tipo de auto y reserva tu cita. Horario de atención: 09:00 - 18:00</p>
+            </div>
+        </header>
+
+        <div class="card" role="region" aria-labelledby="formTitle">
+            <h2 id="formTitle" style="margin:0 0 10px 0; color:var(--gold)">Reserva tu cita</h2>
+
+            <form id="appointmentForm" novalidate>
+                <div class="left">
+                    <div>
+                        <label for="carType">Tipo de auto</label>
+                        <select id="carType" required>
+                            <option value="">Selecciona...</option>
+                            <option value="automatico">Autos automáticos</option>
+                            <option value="manual">Autos con transmisión manual</option>
+                            <option value="hibrido">Autos híbridos</option>
+                        </select>
+                        <div id="carTypeError" class="error" style="display:none"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="model">Modelo</label>
+                            <input id="model" type="text" placeholder="Ej: Toyota Corolla" required />
+                        </div>
+                        <div class="col">
+                            <label for="plate">Placa (opcional)</label>
+                            <input id="plate" type="text" placeholder="ABC-123" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="serviceType">Tipo de servicio</label>
+                        <select id="serviceType" required>
+                            <option value="">Selecciona...</option>
+                            <option value="mantenimiento">Mantenimiento preventivo</option>
+                            <option value="revision">Revisión general</option>
+                            <option value="diagnostico">Diagnóstico computarizado</option>
+                            <option value="reparacion">Reparación</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="date">Fecha</label>
+                            <input id="date" type="date" required />
+                        </div>
+                        <div class="col">
+                            <label for="time">Hora</label>
+                            <input id="time" type="time" required />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="location">Sucursal (opcional)</label>
+                        <select id="location">
+                            <option value="">Sucursal principal</option>
+                            <option value="norte">Sucursal Norte</option>
+                            <option value="centro">Sucursal Centro</option>
+                            <option value="sur">Sucursal Sur</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="notes">Notas (opcional)</label>
+                        <textarea id="notes" placeholder="Indica detalles relevantes..."></textarea>
+                    </div>
+
+                </div>
+
+                <aside class="right">
+                    <div class="summary" aria-live="polite">
+                        <h4>Resumen</h4>
+                        <p id="summaryType">Tipo: —</p>
+                        <p id="summaryModel">Modelo: —</p>
+                        <p id="summaryDate">Fecha/Hora: —</p>
+                        <p id="summaryService">Servicio: —</p>
+                        <p id="summaryLocation">Sucursal: —</p>
+                    </div>
+
+                    <div style="display:flex; gap:12px; align-items:center; margin-top:8px;">
+                        <button type="button" class="ghost" id="checkAvailabilityBtn" style="border:1px solid rgba(212,175,55,0.08); color:var(--gold);">Ver disponibilidad</button>
+                        <div style="flex:1"></div>
+                    </div>
+
+                    <div class="note">Te contactaremos por email o teléfono para confirmar la cita. Puedes descargar el evento al confirmar.</div>
+
+                    <div class="submit-row">
+                        <button type="submit" class="primary">Solicitar cita</button>
+                        <button type="reset" class="ghost">Limpiar</button>
+                    </div>
+
+                    <div id="formError" class="error" style="display:none"></div>
+                </aside>
+            </form>
+        </div>
+
+        <footer>
+            DriveX • Atención y reservas — Tel: +57 300 000 0000
+        </footer>
+    </div>
+
+    <!-- Modal container -->
+    <div id="modalRoot" style="display:none"></div>
+
+    <script>
+    // Helper selectors
+    const form = document.getElementById('appointmentForm');
+    const carType = document.getElementById('carType');
+    const model = document.getElementById('model');
+    const plate = document.getElementById('plate');
+    const serviceType = document.getElementById('serviceType');
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+    const locationInput = document.getElementById('location');
+    const notes = document.getElementById('notes');
+
+    const summaryType = document.getElementById('summaryType');
+    const summaryModel = document.getElementById('summaryModel');
+    const summaryDate = document.getElementById('summaryDate');
+    const summaryService = document.getElementById('summaryService');
+    const summaryLocation = document.getElementById('summaryLocation');
+
+    const formError = document.getElementById('formError');
+    const carTypeError = document.getElementById('carTypeError');
+
+    // Update summary on input
+    function updateSummary(){
+      summaryType.textContent = 'Tipo: ' + (carType.value ? carType.options[carType.selectedIndex].text : '—');
+      summaryModel.textContent = 'Modelo: ' + (model.value || '—');
+      summaryService.textContent = 'Servicio: ' + (serviceType.value ? serviceType.options[serviceType.selectedIndex].text : '—');
+
+      let dateVal = dateInput.value;
+      let timeVal = timeInput.value;
+      summaryDate.textContent = 'Fecha/Hora: ' + ((dateVal && timeVal) ? (formatDate(dateVal) + ' — ' + timeVal) : '—');
+
+      summaryLocation.textContent = 'Sucursal: ' + (locationInput.value ? locationInput.options[locationInput.selectedIndex].text : 'Sucursal principal');
+    }
+
+    // Format date YYYY-MM-DD -> dd/mm/yyyy
+    function formatDate(d){
+      if(!d) return '';
+      const [y,m,day] = d.split('-');
+      return `${day}/${m}/${y}`;
+    }
+
+    // Validate basic form
+    function validate(){
+      formError.style.display='none';
+      carTypeError.style.display='none';
+      if(!carType.value){
+        carTypeError.textContent='Por favor selecciona el tipo de auto.';
+        carTypeError.style.display='block';
+        return false;
+      }
+      if(!model.value.trim()){
+        formError.textContent='Ingresa el modelo del auto.';
+        formError.style.display='block';
+        return false;
+      }
+      if(!serviceType.value){
+        formError.textContent='Selecciona el tipo de servicio.';
+        formError.style.display='block';
+        return false;
+      }
+      if(!dateInput.value || !timeInput.value){
+        formError.textContent='Selecciona fecha y hora de la cita.';
+        formError.style.display='block';
+        return false;
+      }
+      // Check business hours 09:00 - 18:00
+      const [hh,mm] = timeInput.value.split(':').map(Number);
+      if(hh < 9 || (hh >= 18 && mm>0) || hh>18){
+        formError.textContent='Horario fuera de atención. Atención: 09:00 - 18:00.';
+        formError.style.display='block';
+        return false;
+      }
+      return true;
+    }
+
+    // Simple availability check (simulated)
+    document.getElementById('checkAvailabilityBtn').addEventListener('click', ()=>{
+      updateSummary();
+      if(!dateInput.value || !timeInput.value){
+        alert('Selecciona primero fecha y hora para comprobar disponibilidad.');
+        return;
+      }
+      // Simulate: block 12:00 - 13:00 as busy for all types
+      const [hh] = timeInput.value.split(':').map(Number);
+      if(hh === 12){
+        alert('La franja seleccionada está ocupada. Intenta otra hora.');
+      } else {
+        alert('Horario disponible. Puedes solicitar la cita.');
+      }
+    });
+
+    // On inputs update summary
+    [carType, model, serviceType, dateInput, timeInput, locationInput].forEach(el => el.addEventListener('input', updateSummary));
+    updateSummary();
+
+    // Form submit -> show confirmation modal
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      formError.style.display='none';
+      if(!validate()) return;
+
+      // Build appointment object
+      const appt = {
+        type: carType.value,
+        typeLabel: carType.options[carType.selectedIndex].text,
+        model: model.value.trim(),
+        plate: plate.value.trim(),
+        service: serviceType.value,
+        serviceLabel: serviceType.options[serviceType.selectedIndex].text,
+        date: dateInput.value,
+        time: timeInput.value,
+        location: locationInput.value || 'Sucursal principal',
+        notes: notes.value.trim(),
+        createdAt: new Date().toISOString()
+      };
+
+      showConfirmationModal(appt);
+    });
+
+    // Show confirmation modal
+    function showConfirmationModal(appt){
+      const modalRoot = document.getElementById('modalRoot');
+      const displayDate = formatDate(appt.date) + ' a las ' + appt.time;
+      modalRoot.innerHTML = `
+        <div class="modal-backdrop" id="mdBackdrop">
+          <div class="modal" role="dialog" aria-modal="true">
+            <h3>Confirmar cita</h3>
+            <p><strong>${appt.typeLabel} — ${appt.model}</strong></p>
+            <p>Servicio: ${appt.serviceLabel}</p>
+            <p>Fecha y hora: ${displayDate}</p>
+            <p>Sucursal: ${appt.location}</p>
+            <p style="margin-top:8px; color:${getComputedStyle(document.documentElement).getPropertyValue('--muted') || '#e7dfc8'};">¿Deseas confirmar esta cita?</p>
+            <div class="modal-actions">
+              <button id="cancelModal" class="close-btn">Cancelar</button>
+              <button id="confirmModal" class="confirm-btn">Confirmar cita</button>
+            </div>
+          </div>
+        </div>
+      `;
+      modalRoot.style.display='block';
+
+      document.getElementById('cancelModal').addEventListener('click', closeModal);
+      document.getElementById('mdBackdrop').addEventListener('click', function(e){ if(e.target.id==='mdBackdrop') closeModal() });
+
+      document.getElementById('confirmModal').addEventListener('click', function(){
+        // Simulate sending appointment
+        sendAppointment(appt).then(response => {
+          closeModal();
+          // Offer .ics download
+          const title = `${appt.typeLabel} - ${appt.model} (Cita DriveX)`;
+          const description = `Servicio: ${appt.serviceLabel}${appt.plate ? '\\nPlaca: '+appt.plate : ''}${appt.notes ? '\\nNotas: '+appt.notes : ''}`;
+          const start = localDateTimeToUTCString(appt.date, appt.time);
+          const end = addMinutesToISO(start, 60); // 1 hour slot
+          const ics = generateICS({title, description, start, end, location: appt.location});
+          downloadFile(ics, 'cita_drivex.ics', 'text/calendar;charset=utf-8');
+          // Show success message
+          alert('Cita confirmada. Se descargó el evento (.ics). También recibirás un email de confirmación (simulado).');
+          form.reset();
+          updateSummary();
+        }).catch(err=>{
+          alert('Error al solicitar la cita. Inténtalo de nuevo más tarde.');
+        });
+      });
+    }
+
+    function closeModal(){
+      const modalRoot = document.getElementById('modalRoot');
+      modalRoot.innerHTML='';
+      modalRoot.style.display='none';
+    }
+
+    // Simulated send (replace this with fetch to your API)
+    function sendAppointment(appt){
+      return new Promise((resolve, reject) => {
+        // Simple simulation: succeed after 700ms
+        setTimeout(()=> {
+          resolve({ok:true, id: Date.now()});
+        },700);
+      });
+    }
+
+    // Utilities: create ICS content
+    function localDateTimeToUTCString(dateStr, timeStr){
+      // dateStr: YYYY-MM-DD, timeStr: HH:MM
+      const [y,m,d]=dateStr.split('-').map(Number);
+      const [hh,mm]=timeStr.split(':').map(Number);
+      const dt = new Date(y, m-1, d, hh, mm);
+      // Return in format: YYYYMMDDTHHMMSSZ in UTC
+      const utcY = dt.getUTCFullYear();
+      const utcM = String(dt.getUTCMonth()+1).padStart(2,'0');
+      const utcD = String(dt.getUTCDate()).padStart(2,'0');
+      const utch = String(dt.getUTCHours()).padStart(2,'0');
+      const utcm = String(dt.getUTCMinutes()).padStart(2,'0');
+      const utcs = String(dt.getUTCSeconds()).padStart(2,'0');
+      return `${utcY}${utcM}${utcD}T${utch}${utcm}${utcs}Z`;
+    }
+    function addMinutesToISO(isoStr, minutes){
+      // isoStr like YYYYMMDDTHHMMSSZ -> parse to Date, add
+      const year = parseInt(isoStr.slice(0,4));
+      const month = parseInt(isoStr.slice(4,6))-1;
+      const day = parseInt(isoStr.slice(6,8));
+      const hour = parseInt(isoStr.slice(9,11));
+      const minute = parseInt(isoStr.slice(11,13));
+      const second = parseInt(isoStr.slice(13,15));
+      const dt = new Date(Date.UTC(year, month, day, hour, minute, second));
+      dt.setMinutes(dt.getMinutes()+minutes);
+      const Y = dt.getUTCFullYear();
+      const M = String(dt.getUTCMonth()+1).padStart(2,'0');
+      const D = String(dt.getUTCDate()).padStart(2,'0');
+      const h = String(dt.getUTCHours()).padStart(2,'0');
+      const min = String(dt.getUTCMinutes()).padStart(2,'0');
+      const s = String(dt.getUTCSeconds()).padStart(2,'0');
+      return `${Y}${M}${D}T${h}${min}${s}Z`;
+    }
+
+    function generateICS({title, description, start, end, location}){
+      // Minimal ICS
+      const uid = 'drivex-' + Date.now();
+      return [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//DriveX//ES',
+        'CALSCALE:GREGORIAN',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${formatDTSTAMP(new Date())}`,
+        `DTSTART:${start}`,
+        `DTEND:${end}`,
+        `SUMMARY:${escapeICSText(title)}`,
+        `DESCRIPTION:${escapeICSText(description)}`,
+        `LOCATION:${escapeICSText(location)}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+    }
+    function formatDTSTAMP(d){
+      const Y = d.getUTCFullYear();
+      const M = String(d.getUTCMonth()+1).padStart(2,'0');
+      const D = String(d.getUTCDate()).padStart(2,'0');
+      const h = String(d.getUTCHours()).padStart(2,'0');
+      const m = String(d.getUTCMinutes()).padStart(2,'0');
+      const s = String(d.getUTCSeconds()).padStart(2,'0');
+      return `${Y}${M}${D}T${h}${m}${s}Z`;
+    }
+    function escapeICSText(txt){
+      return (txt||'').replace(/\\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');
+    }
+    function downloadFile(content, filename, mime){
+      const blob = new Blob([content], {type: mime});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // Initialize default date to tomorrow
+    (function setDefaultDate(){
+      const today = new Date();
+      today.setDate(today.getDate()+1);
+      const y = today.getFullYear();
+      const m = String(today.getMonth()+1).padStart(2,'0');
+      const d = String(today.getDate()).padStart(2,'0');
+      dateInput.value = `${y}-${m}-${d}`;
+      // default time 10:00
+      timeInput.value = '10:00';
+      updateSummary();
+    })();
+
+    </script>
+</body>
+</html>
