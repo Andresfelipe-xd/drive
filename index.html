@@ -1,0 +1,350 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{subject}}</title>
+    <style>
+       
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0f1112;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            color: #e7dfc8;
+        }
+
+        .hide-preheader {
+            display: none !important;
+            visibility: hidden;
+            mso-hide: all;
+            font-size: 1px;
+            line-height: 1px;
+            max-height: 0;
+            max-width: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width:600px) {
+            .stack {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .hero-padding {
+                padding: 18px !important;
+            }
+
+            .two-col {
+                display: block !important;
+                width: 100% !important;
+            }
+
+            .img {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    </style>
+</head>
+<body style="background:#0f1112; margin:0; padding:0;">
+
+    <!-- Preheader (visible en bandeja) -->
+    <span class="hide-preheader">{{preheader}}</span>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#0f1112; padding:28px 16px;">
+        <tr>
+            <td align="center">
+
+                <!-- Contenedor central -->
+                <table role="presentation" width="680" cellpadding="0" cellspacing="0" style="max-width:680px; width:100%; background:linear-gradient(180deg,#141619,#0f1113); border-radius:12px; overflow:hidden; border:1px solid rgba(212,175,55,0.06);">
+                    <!-- Cabecera: logo + ver en navegador -->
+                    <tr>
+                        <td style="padding:18px 20px; text-align:center; background:linear-gradient(180deg, rgba(0,0,0,0.06), transparent);">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="text-align:left;">
+                                        <img src="logo.jpg" alt="logo" width="140" style="display:block; border:none; outline:none; text-decoration:none;" />
+                                    </td>
+                                    <td style="text-align:right; vertical-align:middle; font-size:13px; color:#9ea59a;">
+                                        <a href="{{view_in_browser_url}}" target="_blank" rel="noopener" style="color:#D4AF37; text-decoration:none;">Ver en navegador</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- HERO -->
+                    <tr>
+                        <td style="padding:28px 30px;" class="hero-padding">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="vertical-align:middle; text-align:left;">
+                                        <h1 style="margin:0 0 12px 0; color:#D4AF37; font-size:26px; line-height:1.08; font-weight:700;">Productividad personal</h1>
+                                        <p style="margin:0 0 18px 0; color:#eae0c7; font-size:15px; line-height:1.5;">
+                                            La productividad personal es la capacidad de organizar y aprovechar de manera eficiente el tiempo, los recursos y las habilidades para cumplir objetivos y realizar tareas de forma efectiva, buscando obtener buenos resultados sin desperdiciar esfuerzo.
+                                        </p>
+                                        <a href="HTMLPage2.html" target="_blank" rel="noopener" style="display:inline-block; background:linear-gradient(180deg,#FFD87B,#D4AF37); color:#0b0b0b; text-decoration:none; padding:12px 18px; border-radius:8px; font-weight:700; box-shadow:0 8px 22px rgba(0,0,0,0.45);">Ver detalles</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Divider -->
+                    <tr>
+                        <td style="padding:0 20px;">
+                            <hr style="border:none; height:1px; background:linear-gradient(90deg, rgba(212,175,55,0.06), rgba(255,255,255,0.02), rgba(212,175,55,0.06)); margin:0 0 16px 0;" />
+                        </td>
+                    </tr>
+
+                    <!-- Plan de 7 semanas (cards) -->
+                    <tr>
+                        <td style="padding:0 20px 18px 20px;">
+                            <h2 style="margin:0 0 12px 0; color:#D4AF37; font-size:18px;">Plan de 7 semanas</h2>
+
+                            <!-- Usamos tabla con 3 columnas por fila para compatibilidad -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <!-- Semana 1 -->
+                                    <td width="33%" style="vertical-align:top; padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td style="text-align:left;">
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:14px;">Semana 1</div>
+                                                    <a href="HTMLPage3.html">
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Productividad Personal</div>
+                                                        </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- Semana 2 -->
+                                    <td width="33%" style="vertical-align:top; padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:14px;">Semana 2</div>
+                                                    <a href="HTMLPage8.html">
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Plan estratégico, Marca comercial y personal y Big Data</div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- Semana 3 -->
+                                    <td width="33%" style="vertical-align:top; padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:14px;">Semana 3</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Práctica y ejercicios</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <!-- Semana 4 -->
+                                    <td width="33%" style="vertical-align:top; padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:14px;">Semana 4</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Revisión y ajustes</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- Semana 5 -->
+                                    <td width="33%" style="vertical-align:top; padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:14px;">Semana 5</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Proyectos aplicados</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- Semana 6 -->
+                                    <td width="33%" style="vertical-align:top; padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:14px;">Semana 6</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Optimización</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="3" style="padding:6px;">
+                                        <table role="presentation" width="100%" cellpadding="10" cellspacing="0" style="background:#121316; border-radius:10px; border:1px solid rgba(212,175,55,0.06);">
+                                            <tr>
+                                                <td>
+                                                    <div style="font-weight:700; color:#D4AF37; font-size:14px;">Semana 7</div>
+                                                    <div style="color:#e7dfc8; font-size:13px; margin-top:6px;">Cierre y próximos pasos</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Company & Images two-column block -->
+                    <tr>
+                        <td style="padding:0 20px 18px 20px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <!-- Columna izquierda - Company -->
+                                    <td width="58%" style="vertical-align:top; padding-right:12px;">
+                                        <h2 style="margin:0 0 10px 0; color:#D4AF37;">Sobre DriveX</h2>
+
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#111214; border-radius:10px; border:1px solid rgba(255,255,255,0.02);">
+                                            <tr>
+                                                <td style="color:#e6ddc1; font-size:14px; line-height:1.6;">
+                                                    <strong>Misión:</strong> Ofrecer servicios y productos de calidad mediante atención responsable y tecnología accesible.<br><br>
+                                                    <strong>Visión:</strong> Ser referentes en innovación y movilidad sostenible en Colombia para 2035.<br><br>
+                                                    <strong>Servicios:</strong> Venta de vehículos, mantenimiento preventivo, diagnóstico computarizado, personalización y soluciones para vehículos eléctricos.
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="padding-top:6px; text-align:left;">
+                                                    <a href="HTMLPage4.html" target="_blank" rel="noopener" style="background:linear-gradient(180deg,#FFD87B,#D4AF37); color:#0b0b0b; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:700;">Más sobre la empresa</a>
+                                                    <a href="mailto:afroserorincon@gmail.com" style="margin-left:10px; color:#D4AF37; text-decoration:none; font-weight:600;">Contactar</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+
+                                    <!-- Columna derecha - 4 imágenes apiladas verticalmente -->
+                                    <td width="42%" style="vertical-align:top;">
+                                        <!-- Imagen 1 -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:12px; background:#0f1112; border-radius:10px; border:1px solid rgba(212,175,55,0.06); overflow:hidden;">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="online.jpg" alt="compra" width="100%" style="display:block; height:auto; border-bottom:1px solid rgba(255,255,255,0.03);" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:10px;">
+                                                    <div style="color:#D4AF37; font-weight:700; font-size:14px;">Venta de autos online</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Imagen 2 -->
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:12px; background:#0f1112; border-radius:10px; border:1px solid rgba(212,175,55,0.06); overflow:hidden;">
+                                            <tr>
+                                                <td style="text-align:center; padding:0;">
+                                                    <img src="manteni.jpg" alt="manteni" width="100%" style="display:block; height:auto; border-bottom:1px solid rgba(255,255,255,0.03);" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:10px;">
+                                                    <div style="color:#D4AF37; font-weight:700; font-size:14px;">Pide tu mantenimiento por internet</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- News section (cards) -->
+                    <tr>
+                        <td style="padding:0 20px 20px 20px;">
+                            <h2 style="margin:0 0 12px 0; color:#D4AF37;">Noticias</h2>
+
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td style="padding:8px 0;">
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#111214; border-radius:10px; border:1px solid rgba(255,255,255,0.02);">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.5;">
+                                                    <strong style="color:#D4AF37;">¡Compra tu auto aquí!</strong><br>
+                                                    Nuevos autos a la venta <a href="HTMLPage6.html" style="color:#D4AF37; text-decoration:none;">Leer más</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:8px 0;">
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#111214; border-radius:10px; border:1px solid rgba(255,255,255,0.02);">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.5;">
+                                                    <strong style="color:#D4AF37;">¡Agenda tu cita de mantenimiento aquí!</strong><br>
+                                                    Citas de mantenimiento <a href="HTMLPage7.html" style="color:#D4AF37; text-decoration:none;">Leer más</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 0;">
+                                        <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#111214; border-radius:10px; border:1px solid rgba(255,255,255,0.02);">
+                                            <tr>
+                                                <td style="color:#e7dfc8; font-size:14px; line-height:1.5;">
+                                                    <strong style="color:#D4AF37;">¡Los vehículos eléctricos ganan cada vez más espacio en Colombia!</strong><br>
+                                                    Autos electricos <a href="HTMLPage9.html" style="color:#D4AF37; text-decoration:none;">Leer más</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 20px 20px 20px;">
+                                        <h2 style="margin:0 0 12px 0; color:#D4AF37;">Redes Sociales</h2>
+
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="padding:8px 0;">
+                                                    <table role="presentation" width="100%" cellpadding="12" cellspacing="0" style="background:#111214; border-radius:10px; border:1px solid rgba(255,255,255,0.02);">
+                                                        <tr>
+                                                            <td style="color:#e7dfc8; font-size:14px; line-height:1.5;">
+                                                                <strong style="color:#D4AF37;">¡Informacion, Descuentos y más!</strong><br>
+                                                                Nuestras redes <a href="HTMLPage10.html" style="color:#D4AF37; text-decoration:none;">Leer más</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <!-- Footer -->
+                                <tr>
+                                    <td style="padding:18px 20px; text-align:center; color:#9aa1a6; font-size:13px;">
+                                        <div style="margin-bottom:8px;">{{company}} — {{address}}</div>
+                                        <div style="font-size:12px;">Este mensaje es informativo. Para más detalles visita <a href="{{company_url}}" style="color:#D4AF37; text-decoration:none;">nuestro sitio</a>.</div>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
