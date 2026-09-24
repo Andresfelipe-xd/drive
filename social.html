@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DriveX Social</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #050505;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #292929;
+      background: #0d0d0d;
+    }
+    header h1 { margin: 0; color: #d4af37; }
+    main {
+      width: min(100% - 30px, 620px);
+      margin: 30px auto;
+    }
+    .post {
+      overflow: hidden;
+      margin-bottom: 24px;
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 14px;
+    }
+    .post-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px;
+    }
+    .avatar {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      background: #d4af37;
+      color: #000;
+      font-weight: bold;
+    }
+    .post-header small { display: block; margin-top: 4px; color: #999; }
+    .post-image {
+      display: block;
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      background: #222;
+    }
+    .post-content { padding: 15px; }
+    .caption { margin: 0 0 14px; line-height: 1.5; }
+    .stats {
+      padding-bottom: 12px;
+      color: #999;
+      border-bottom: 1px solid #292929;
+      font-size: 14px;
+    }
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 12px;
+    }
+    button {
+      padding: 10px 6px;
+      color: #ddd;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover { background: #202020; }
+    .like-button.active { color: #ff5573; }
+    .comment-form {
+      display: none;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .comment-form.visible { display: flex; }
+    .comment-form input {
+      min-width: 0;
+      flex: 1;
+      padding: 10px;
+      color: #fff;
+      background: #080808;
+      border: 1px solid #333;
+      border-radius: 7px;
+    }
+    .comment-form button { background: #d4af37; color: #000; font-weight: bold; }
+    @media (max-width: 500px) {
+      main { width: min(100% - 16px, 620px); margin-top: 18px; }
+      .post-image { height: 250px; }
+      .actions button { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DriveX Social</h1>
+  </header>
+
+  <main>
+    <article class="post">
+      <div class="post-header"><div class="avatar">D</div><div><strong>DriveX Oficial</strong><small>Hace 2 horas · Público</small></div></div>
+      <img class="post-image" src="online.jpg" alt="Venta de autos online">
+      <div class="post-content">
+        <p class="caption">Conoce nuestros vehículos disponibles y encuentra tu próximo auto. 🚗</p>
+        <div class="stats"><span class="likes">24</span> Me gusta · <span class="comments">3</span> comentarios</div>
+        <div class="actions"><button class="like-button">♡ Me gusta</button><button class="comment-button">💬 Comentar</button><button class="share-button">↗ Reenviar</button></div>
+        <form class="comment-form"><input type="text" placeholder="Escribe un comentario..."><button>Publicar</button></form>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-header"><div class="avatar">D</div><div><strong>DriveX Oficial</strong><small>Ayer · Público</small></div></div>
+      <img class="post-image" src="manteni.jpg" alt="Mantenimiento de vehículos">
+      <div class="post-content">
+        <p class="caption">El mantenimiento preventivo ayuda a mantener tu vehículo seguro y en buen estado. 🔧</p>
+        <div class="stats"><span class="likes">18</span> Me gusta · <span class="comments">5</span> comentarios</div>
+        <div class="actions"><button class="like-button">♡ Me gusta</button><button class="comment-button">💬 Comentar</button><button class="share-button">↗ Reenviar</button></div>
+        <form class="comment-form"><input type="text" placeholder="Escribe un comentario..."><button>Publicar</button></form>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-header"><div class="avatar">D</div><div><strong>DriveX Oficial</strong><small>Hace 3 días · Público</small></div></div>
+      <img class="post-image" src="bmw.jpg" alt="Vehículo BMW">
+      <div class="post-content">
+        <p class="caption">Diseño, potencia y tecnología en un solo vehículo. 🏁</p>
+        <div class="stats"><span class="likes">31</span> Me gusta · <span class="comments">8</span> comentarios</div>
+        <div class="actions"><button class="like-button">♡ Me gusta</button><button class="comment-button">💬 Comentar</button><button class="share-button">↗ Reenviar</button></div>
+        <form class="comment-form"><input type="text" placeholder="Escribe un comentario..."><button>Publicar</button></form>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    document.querySelectorAll('.post').forEach(post => {
+      const likeButton = post.querySelector('.like-button');
+      const likes = post.querySelector('.likes');
+      const commentButton = post.querySelector('.comment-button');
+      const commentForm = post.querySelector('.comment-form');
+      const comments = post.querySelector('.comments');
+
+      likeButton.addEventListener('click', () => {
+        const liked = likeButton.classList.toggle('active');
+        likeButton.textContent = liked ? '♥ Te gusta' : '♡ Me gusta';
+        likes.textContent = Number(likes.textContent) + (liked ? 1 : -1);
+      });
+
+      commentButton.addEventListener('click', () => {
+        commentForm.classList.toggle('visible');
+        if (commentForm.classList.contains('visible')) commentForm.querySelector('input').focus();
+      });
+
+      commentForm.addEventListener('submit', event => {
+        event.preventDefault();
+        const input = commentForm.querySelector('input');
+        if (!input.value.trim()) return;
+        comments.textContent = Number(comments.textContent) + 1;
+        input.value = '';
+        commentForm.classList.remove('visible');
+      });
+
+      post.querySelector('.share-button').addEventListener('click', async event => {
+        const button = event.currentTarget;
+        try { await navigator.clipboard.writeText(window.location.href); } catch (_) {}
+        button.textContent = '✓ Enlace copiado';
+        setTimeout(() => button.textContent = '↗ Reenviar', 1800);
+      });
+    });
+  </script>
+</body>
+</html>
